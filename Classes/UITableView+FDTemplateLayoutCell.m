@@ -33,16 +33,11 @@
     cell.bounds = cellBounds;
     
     CGFloat rightSystemViewsWidth = 0.0;
-    UIView *indexView;
     for (UIView *view in self.subviews) {
         if ([view isKindOfClass:NSClassFromString(@"UITableViewIndex")]) {
-            indexView = view;
+            rightSystemViewsWidth = CGRectGetWidth(view.frame);
             break;
         }
-    }
-    
-    if (indexView) {
-        rightSystemViewsWidth = CGRectGetWidth(indexView.frame);
     }
     
     // If a cell has accessory view or system accessory type, its content view's width is smaller
