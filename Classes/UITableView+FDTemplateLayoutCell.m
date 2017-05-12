@@ -60,6 +60,10 @@
         rightSystemViewsWidth += systemAccessoryWidths[cell.accessoryType];
     }
     
+    if ([UIScreen mainScreen].scale >= 3.0) {
+        rightSystemViewsWidth += 4;
+    }
+    
     contentViewWidth -= rightSystemViewsWidth;
     
     // If not using auto layout, you have to override "-sizeThatFits:" to provide a fitting size by yourself.
